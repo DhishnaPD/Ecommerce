@@ -1,7 +1,7 @@
 {% for obj in movies %}
-<h1>Title:{{obj.title}}</h1>
-<p>Summary:{{obj.year}}</p>
-<h3>Year:{{obj.summary}}</h3>
+<h1>Title:{{obj.title | upper}}</h1>
+<p>Summary:{{obj.summary | default:'No dta available so it's using this default value using filter'}}</p>
+<h3>Year:{{obj.year}}</h3>
 <h3>success:{{obj.success}}</h3>
 
 {% if obj.success %}
