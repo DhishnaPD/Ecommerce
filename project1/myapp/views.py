@@ -1,5 +1,22 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import render
 # Create your views here.
 def print_hello(request):
-    return HttpResponse("Hello Django")
+    movie_data={
+        'movies':[
+        {
+        'title':'GodFather',
+        'year':1990,
+        'summary':'It is a comedy movie',
+        'success':'false'
+        },
+        {
+        'title':'GoldFish',
+        'year':1990,
+        'summary':'It is a movie',
+        'success':'true'
+        }
+
+        ]}
+    return render(request,'hello.html',movie_data)
